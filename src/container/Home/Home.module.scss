@@ -1,0 +1,247 @@
+@import "../../sass/main.scss";
+
+.home {
+  display: grid;
+  grid-template-rows: 100vh 40vw;
+  grid-template-columns: repeat(15, 1fr);
+
+  &__main {
+    color: $color-white;
+    align-self: center;
+    justify-self: center;
+    grid-column: 1 / 1;
+    grid-row: 1 / 2;
+  }
+
+  &__title {
+    animation: moveInLeft 1s;
+  }
+}
+
+/*
+//////////////////////////////////////
+HEADER
+/////////////////////////////////////
+*/
+
+.header {
+  grid-column: 1 / -1;
+
+  background: linear-gradient(
+      to right,
+      rgba($color-secondary-dark, 0.5),
+      rgba($color-secondary-light, 0.5)
+    ),
+    url("../../images/Notepad.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  // clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+
+  padding: 2rem;
+  color: $color-white;
+  text-transform: uppercase;
+
+  &__title {
+    font-size: 5rem;
+    grid-column: 2 / -1;
+    align-self: center;
+  }
+
+  &__heading {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: type 5s steps(60, end), moveInLeft 2s;
+  }
+
+  &__heading-sub {
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: type1 5s 2s steps(60, end), moveInLeft 2s 2s forwards;
+  }
+}
+
+@keyframes type {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes type1 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/*
+//////////////////////////////////////
+PROJECTS
+/////////////////////////////////////
+*/
+
+.projects {
+  grid-column: 1 / -1;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  display: grid;
+
+  text-transform: uppercase;
+
+  &__pictures {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+
+    background: $color-primary-light;
+  }
+
+  &__image {
+    width: 100%;
+
+    &-1 {
+      grid-column: 2 / span 5;
+      grid-row: 4 / -3;
+      z-index: 10;
+    }
+
+    &-2 {
+      grid-column: 3 / -3;
+      grid-row: 2 / -2;
+    }
+
+    // &-3 {
+    //   grid-column: 7 / 10;
+    //   grid-row: 4 / 8;
+    // }
+  }
+
+  &__content {
+    padding: 4rem 10rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  &__heading {
+    color: $color-primary-light;
+    font-weight: 400;
+
+    &--sub {
+      color: $color-grey-dark-1;
+      font-weight: 700;
+    }
+  }
+}
+
+/*
+//////////////////////////////////////
+OVERVIEW
+/////////////////////////////////////
+*/
+
+.title {
+  grid-column: 1 / -1;
+
+  justify-self: center;
+
+  margin-top: 10rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.overviews {
+  grid-column: 1 / -1;
+
+  margin: 10rem 0;
+  padding: 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 2rem;
+}
+
+.overview {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 3.5rem;
+
+  background-color: $color-grey-light-1;
+
+  &__image {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    z-index: 1;
+
+    height: 20rem;
+
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &__type {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    justify-self: end;
+    z-index: 2;
+    margin: 0.5rem;
+
+    height: 2.5rem;
+    width: 2.5rem;
+    fill: $color-primary-light;
+  }
+
+  &__name {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    justify-self: center;
+    align-self: end;
+    z-index: 3;
+
+    width: 80%;
+    background: $color-secondary-dark;
+    padding: 1.2rem 0;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 400;
+    color: $color-white;
+
+    transform: translateY(50%);
+  }
+
+  &__about:nth-of-type(1),
+  &__about:nth-of-type(2) {
+    margin-top: 2.5rem;
+  }
+
+  &__about {
+    font-size: 1.5rem;
+    margin-left: 2rem;
+
+    // display: flex;
+    // align-items: center;
+  }
+
+  &__info {
+    height: 2rem;
+    width: 2rem;
+
+    margin-right: 1rem;
+    fill: $color-primary-light;
+  }
+
+  &__btn {
+    grid-column: 1 / -1;
+  }
+}
