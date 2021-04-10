@@ -17,6 +17,7 @@ import Aux from "../../hoc/Auxiliary/Auxiliary";
 import * as newsDataActions from "../../store/actions/index";
 import SearchParams from "../../shared/models/SearchParams";
 import Store from "../../shared/models/StoreI";
+import { NavLink } from "react-router-dom";
 
 interface PropsI {
   fetchArticles: (searchParams: SearchParams) => void;
@@ -101,7 +102,14 @@ class Home extends Component<PropsI, StateI> {
             >
               Projects
             </h3>
-            <button className={classes["btn"]}>View Projects</button>
+            <button className={`${classes["btn"]} ${classes["projects__btn"]}`}>
+              <NavLink
+                className={classes["projects__link"]}
+                to={{ pathname: "/project" }}
+              >
+                View Projects
+              </NavLink>
+            </button>
           </div>
         </div>
 
@@ -125,9 +133,7 @@ class Home extends Component<PropsI, StateI> {
               <svg className={classes["overview__info"]}>
                 <use xlinkHref={`${Icons}#icon-tools`}></use>
               </svg>
-              <ul className={classes["overview__items"]}>
-                <li className={classes["overview__item"]}>React</li>
-              </ul>
+              <div className={classes["overview__tech"]}>React</div>
             </div>
 
             <div className={classes["overview__about"]}>
@@ -165,9 +171,7 @@ class Home extends Component<PropsI, StateI> {
               <svg className={classes["overview__info"]}>
                 <use xlinkHref={`${Icons}#icon-tools`}></use>
               </svg>
-              <ul className={classes["overview__items"]}>
-                <li className={classes["overview__item"]}>React</li>
-              </ul>
+              <div className={classes["overview__tech"]}>React</div>
             </div>
 
             <div className={classes["overview__about"]}>
@@ -205,9 +209,7 @@ class Home extends Component<PropsI, StateI> {
               <svg className={classes["overview__info"]}>
                 <use xlinkHref={`${Icons}#icon-tools`}></use>
               </svg>
-              <ul className={classes["overview__items"]}>
-                <li className={classes["overview__item"]}>Typescript</li>
-              </ul>
+              <div className={classes["overview__tech"]}>Typescript</div>
             </div>
 
             <div className={classes["overview__about"]}>
@@ -245,9 +247,7 @@ class Home extends Component<PropsI, StateI> {
               <svg className={classes["overview__info"]}>
                 <use xlinkHref={`${Icons}#icon-tools`}></use>
               </svg>
-              <ul className={classes["overview__items"]}>
-                <li className={classes["overview__item"]}>Javascript</li>
-              </ul>
+              <div className={classes["overview__tech"]}>Javascript</div>
             </div>
 
             <div className={classes["overview__about"]}>

@@ -16,7 +16,7 @@ const Project = (props: PropsI) => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    if (!(projectList && projectList.current)) {
+    if (!projectList.current) {
       return;
     }
 
@@ -49,9 +49,11 @@ const Project = (props: PropsI) => {
         </div>
       </header>
 
-      <h3 className={classes["project__title"]}>Projects</h3>
+      <h3 id="projects" className={classes["project__title"]}>
+        Projects
+      </h3>
 
-      <section id="projects" className={classes["projects"]}>
+      <section className={classes["projects"]}>
         <ul className={classes["projects__items"]} ref={projectList}>
           <li className={classes["projects__item"]}>
             <img className={classes["projects__image"]} src={projectImage4} />

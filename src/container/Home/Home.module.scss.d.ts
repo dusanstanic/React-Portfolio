@@ -29,15 +29,18 @@ interface CssExports {
   'overview__image': string;
   'overview__info': string;
   'overview__name': string;
+  'overview__tech': string;
   'overview__type': string;
   'overviews': string;
   'projects': string;
+  'projects__btn': string;
   'projects__content': string;
   'projects__heading': string;
   'projects__heading--sub': string;
   'projects__image': string;
   'projects__image-1': string;
   'projects__image-2': string;
+  'projects__link': string;
   'projects__pictures': string;
   'title': string;
   'type': string;

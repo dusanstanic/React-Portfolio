@@ -46,7 +46,7 @@ HEADER
 
   &__title {
     font-size: 5rem;
-    grid-column: 2 / -1;
+    grid-column: 3 / -1;
     align-self: center;
   }
 
@@ -147,6 +147,16 @@ PROJECTS
       font-weight: 700;
     }
   }
+
+  &__btn {
+    padding: 0;
+  }
+
+  &__link {
+    display: block;
+    color: $color-white;
+    padding: 1.8rem 3rem;
+  }
 }
 
 /*
@@ -245,6 +255,10 @@ OVERVIEW
 
     margin-right: 1rem;
     fill: $color-primary-light;
+  }
+
+  &__tech {
+    font-style: italic;
   }
 
   &__btn {

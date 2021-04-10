@@ -1,7 +1,7 @@
 import { MutableRefObject, RefObject } from "react";
 
 function animateOnView(
-  element: RefObject<HTMLElement> | MutableRefObject<HTMLLIElement | undefined>,
+  element: RefObject<HTMLElement> | MutableRefObject<HTMLElement | undefined>,
   animationIn: string,
   animationOut: string
 ) {
