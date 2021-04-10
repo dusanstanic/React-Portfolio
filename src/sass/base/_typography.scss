@@ -67,3 +67,19 @@ h4 {
     background: $color-primary-dark;
   }
 }
+
+.link {
+  background: $color-primary-light;
+  color: $color-white;
+  border: none;
+  border-radius: 0;
+  padding: 1.8rem 3rem;
+  text-transform: uppercase;
+  transition: all 0.2s;
+
+  &:hover {
+    background: rgba($color-grey-light-1, 0.4);
+    transform: translateY(-1rem);
+    box-shadow: 0rem 1rem 1rem rgba($color-white, 0.5);
+  }
+}

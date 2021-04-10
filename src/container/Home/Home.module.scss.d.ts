@@ -2,6 +2,9 @@
 // Please do not change this file!
 interface CssExports {
   'btn': string;
+  'fadeInAn': string;
+  'fadeOut': string;
+  'fadeOutAn': string;
   'fadein': string;
   'header': string;
   'header__heading': string;
@@ -10,12 +13,16 @@ interface CssExports {
   'home': string;
   'home__main': string;
   'home__title': string;
+  'link': string;
   'mb-hg': string;
   'mb-lg': string;
   'mb-md': string;
   'mb-sm': string;
+  'moveBackTop': string;
   'moveInLeft': string;
   'moveInRight': string;
+  'moveInRightAn': string;
+  'moveInTop': string;
   'overview': string;
   'overview__about': string;
   'overview__btn': string;

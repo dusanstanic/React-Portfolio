@@ -16,15 +16,20 @@ const Footer = () => {
         </li>
         <li className={classes["nav__item"]}>
           <a href="#" className={classes["nav__link"]}>
-            About us
-          </a>
-        </li>
-        <li className={classes["nav__item"]}>
-          <a href="#" className={classes["nav__link"]}>
-            Company
+            About
           </a>
         </li>
       </ul>
+      <div className={classes["contact"]}>
+        <ul className={classes["contact__items"]}>
+          <li className={classes["contact__item"]}>
+            <div>dusan.stanic97@hotmail.com</div>
+          </li>
+          <li className={classes["contact__item"]}>
+            <div>065-2323-839</div>
+          </li>
+        </ul>
+      </div>
       <p className={classes["copyright"]}>
         &copy; Copyright 2021 by Dusan Stanic.
       </p>

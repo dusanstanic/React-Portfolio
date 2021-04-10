@@ -2,13 +2,20 @@
 // Please do not change this file!
 interface CssExports {
   'btn': string;
+  'fadeInAn': string;
+  'fadeOut': string;
+  'fadeOutAn': string;
   'fadein': string;
+  'link': string;
   'mb-hg': string;
   'mb-lg': string;
   'mb-md': string;
   'mb-sm': string;
+  'moveBackTop': string;
   'moveInLeft': string;
   'moveInRight': string;
+  'moveInRightAn': string;
+  'moveInTop': string;
   'nav': string;
   'nav__item': string;
   'nav__item-brand': string;

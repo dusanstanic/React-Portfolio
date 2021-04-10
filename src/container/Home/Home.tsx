@@ -1,13 +1,16 @@
 import classes from "./Home.module.scss";
-import { Component } from "react";
+import React, { Component, RefObject } from "react";
 import { connect } from "react-redux";
+
 import ArticleM from "../../shared/models/Article";
+
+import { animateOnView } from "../../shared/animation/onView";
+
+import Icons from "../../images/sprite.svg";
 import projectImage1 from "../../images/Checkers.png";
 import projectImage2 from "../../images/NewsDaily.png";
 import projectImage3 from "../../images/GreenEarth.jpg";
 import projectImage4 from "../../images/NintendoShop.png";
-
-import Icons from "../../images/sprite.svg";
 
 import Aux from "../../hoc/Auxiliary/Auxiliary";
 
@@ -26,6 +29,34 @@ interface StateI {
 }
 
 class Home extends Component<PropsI, StateI> {
+  project: RefObject<HTMLDivElement> = React.createRef();
+  overview: RefObject<HTMLDivElement> = React.createRef();
+  projectViewHandler?: (this: Document, ev: Event) => any;
+  overViewViewHandler?: (this: Document, ev: Event) => any;
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+    console.log("componentDidMount");
+    this.overViewViewHandler = animateOnView(
+      this.overview,
+      classes.fadeInAn,
+      classes.fadeOutAn
+    );
+    this.projectViewHandler = animateOnView(
+      this.project,
+      classes.moveInRightAn,
+      classes.fadeOutAn
+    );
+  }
+
+  componentWillUnmount() {
+    console.log("componentWillUnmount");
+    document.removeEventListener("scroll", this.overViewViewHandler!);
+    document.removeEventListener("scroll", this.projectViewHandler!);
+  }
+
+  animate = () => {};
+
   render() {
     return (
       <div className={classes["home"]}>
@@ -39,16 +70,17 @@ class Home extends Component<PropsI, StateI> {
             </h3>
           </div>
         </div>
-        <div className={classes["projects"]}>
+
+        <div className={classes["projects"]} ref={this.project}>
           <div className={classes["projects__pictures"]}>
             <img
               className={`${classes["projects__image"]} ${classes["projects__image-1"]}`}
-              src={projectImage1}
+              src={projectImage2}
               alt="Project Image"
             />
             <img
               className={`${classes["projects__image"]} ${classes["projects__image-2"]}`}
-              src={projectImage2}
+              src={projectImage4}
               alt="Project Image"
             />
             {/* <img
@@ -75,7 +107,7 @@ class Home extends Component<PropsI, StateI> {
 
         <h3 className={classes["title"]}>Projects Overview</h3>
 
-        <div className={classes["overviews"]}>
+        <div className={classes["overviews"]} ref={this.overview}>
           <div className={classes["overview"]}>
             <img
               className={classes["overview__image"]}
@@ -84,7 +116,7 @@ class Home extends Component<PropsI, StateI> {
             />
 
             <svg className={classes["overview__type"]}>
-              <use xlinkHref={`${Icons}#icon-images`}></use>
+              <use xlinkHref={`${Icons}#icon-shop`}></use>
             </svg>
 
             <h3 className={classes["overview__name"]}>Nintendo Shop</h3>
@@ -109,7 +141,7 @@ class Home extends Component<PropsI, StateI> {
               <svg className={classes["overview__info"]}>
                 <use xlinkHref={`${Icons}#icon-classic-computer`}></use>
               </svg>
-              <div className={classes["overview__tech"]}>Brochure</div>
+              <div className={classes["overview__tech"]}>Shop</div>
             </div>
 
             <button className={`${classes["btn"]} ${classes["overview__btn"]}`}>

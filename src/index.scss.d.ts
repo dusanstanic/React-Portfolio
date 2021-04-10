@@ -2,6 +2,7 @@
 // Please do not change this file!
 interface CssExports {
   'btn': string;
+  'link': string;
   'mb-hg': string;
   'mb-lg': string;
   'mb-md': string;

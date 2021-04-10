@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { Route, RouteComponentProps, Switch, withRouter } from "react-router";
 
 import Home from "./container/Home/Home";
+import Project from "./container/Project/Project";
+
 import * as newsDataActions from "./store/actions/index";
 
 import Layout from "./hoc/Layout/Layout";
@@ -26,6 +28,7 @@ const App: FunctionComponent<PropsI> = ({ history, articleDataCheckState }) => {
       <Layout>
         <Switch>
           <Route path="/home" component={Home} />
+          <Route path="/project" component={Project} />
         </Switch>
       </Layout>
     </div>

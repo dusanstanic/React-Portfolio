@@ -4,4 +4,5 @@ module.exports = {
     ["@babel/preset-react", { runtime: "automatic" }],
     "@babel/typescript",
   ],
+  plugins: ["@babel/plugin-proposal-class-properties"],
 };

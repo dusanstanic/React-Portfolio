@@ -1,7 +1,7 @@
 import React, { Component, FunctionComponent } from "react";
 import classes from "./Layout.scss";
 
-console.log(classes);
+// console.log(classes);
 
 import Aux from "../Auxiliary/Auxiliary";
 
@@ -24,9 +24,9 @@ class Layout extends Component<{}, FunctionComponent> {
             {this.props.children}
           </main>
 
-          {/* <div className={classes["layout__footer"]}>
+          <div className={classes["layout__footer"]}>
             <Footer />
-          </div> */}
+          </div>
         </div>
       </Aux>
     );

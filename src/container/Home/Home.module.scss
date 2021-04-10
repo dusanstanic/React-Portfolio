@@ -2,7 +2,7 @@
 
 .home {
   display: grid;
-  grid-template-rows: 100vh 40vw;
+  grid-template-rows: 100vh /*40vw*/;
   grid-template-columns: repeat(15, 1fr);
 
   &__main {
@@ -91,16 +91,21 @@ PROJECTS
 .projects {
   grid-column: 1 / -1;
 
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
 
-  display: grid;
-
+  opacity: 0;
   text-transform: uppercase;
+
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+  }
 
   &__pictures {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr);
+    // grid-template-rows: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 4vw);
 
     background: $color-primary-light;
   }
@@ -111,7 +116,6 @@ PROJECTS
     &-1 {
       grid-column: 2 / span 5;
       grid-row: 4 / -3;
-      z-index: 10;
     }
 
     &-2 {
@@ -162,10 +166,12 @@ OVERVIEW
 }
 
 .overviews {
+  opacity: 0;
   grid-column: 1 / -1;
 
-  margin: 10rem 0;
-  padding: 2rem;
+  // background-color: $color-secondary-dark;
+  margin: 5rem 0;
+  padding: 8rem 4rem;
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
