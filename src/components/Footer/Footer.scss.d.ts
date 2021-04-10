@@ -25,6 +25,7 @@ interface CssExports {
   'nav__link': string;
   'u-center-text': string;
   'wiggle': string;
+  'wiggleAn': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

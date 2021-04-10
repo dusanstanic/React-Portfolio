@@ -1,13 +1,15 @@
 import { MutableRefObject, RefObject } from "react";
 
-function animateOnView(
+function animateOnViewChildren(
   element: RefObject<HTMLElement> | MutableRefObject<HTMLElement | undefined>,
   animationIn: string,
-  animationOut: string
+  animationOut: string,
+  animationChildren: string
 ) {
-  if (!element) {
+  if (!element.current) {
     return;
   }
+  const elementChildren = element.current.children;
 
   let isInView = false;
 
@@ -30,6 +32,14 @@ function animateOnView(
     if (inView() && !isInView) {
       element.current?.classList.add(animationIn);
       element.current?.classList.remove(animationOut);
+
+      let delay = 0.5;
+      for (let i = 0; i < elementChildren.length; i++) {
+        delay += 0.5;
+        (<HTMLElement>elementChildren[i]).style.animationDelay = delay + "s";
+        elementChildren[i].classList.add(animationChildren);
+      }
+
       console.log("IN");
       isInView = true;
     }
@@ -54,4 +64,4 @@ function animateOnView(
   return animate;
 }
 
-export { animateOnView };
+export { animateOnViewChildren };

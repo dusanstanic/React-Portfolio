@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import ArticleM from "../../shared/models/Article";
 
 import { animateOnView } from "../../shared/animation/onView";
+import { animateOnViewChildren } from "../../shared/animation/onViewChildren";
 
 import Icons from "../../images/sprite.svg";
 import projectImage1 from "../../images/Checkers.png";
@@ -38,10 +39,11 @@ class Home extends Component<PropsI, StateI> {
   componentDidMount() {
     window.scrollTo(0, 0);
     console.log("componentDidMount");
-    this.overViewViewHandler = animateOnView(
+    this.overViewViewHandler = animateOnViewChildren(
       this.overview,
       classes.fadeInAn,
-      classes.fadeOutAn
+      classes.fadeOutAn,
+      classes.wiggleAn
     );
     this.projectViewHandler = animateOnView(
       this.project,

@@ -28,12 +28,13 @@
 
 @keyframes wiggle {
   0% {
-    transform: translateX(30px);
-    opacity: 1;
+    transform: translateY(30px);
+  }
+  50% {
+    transform: translateY(-30px);
   }
   100% {
-    transform: translateX(-30px);
-    opacity: 0.5;
+    transform: translateY(0);
   }
 }
 
@@ -89,4 +90,8 @@
 
 .moveInRightAn {
   animation: fadein 0.2s ease-in forwards, moveInRight 1s ease-in-out forwards;
+}
+
+.wiggleAn {
+  animation: wiggle 1s ease-in forwards;
 }
