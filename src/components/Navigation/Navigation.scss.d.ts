@@ -15,6 +15,7 @@ interface CssExports {
   'moveInLeft': string;
   'moveInRight': string;
   'moveInRightAn': string;
+  'moveInRotateTop': string;
   'moveInTop': string;
   'nav': string;
   'nav__item': string;
@@ -22,6 +23,7 @@ interface CssExports {
   'nav__items': string;
   'nav__link': string;
   'nav__link-brand': string;
+  'openIn': string;
   'u-center-text': string;
   'wiggle': string;
   'wiggleAn': string;

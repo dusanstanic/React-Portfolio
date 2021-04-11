@@ -22,7 +22,9 @@ interface CssExports {
   'moveInLeft': string;
   'moveInRight': string;
   'moveInRightAn': string;
+  'moveInRotateTop': string;
   'moveInTop': string;
+  'openIn': string;
   'overview': string;
   'overview__about': string;
   'overview__btn': string;

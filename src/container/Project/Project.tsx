@@ -9,6 +9,7 @@ import projectImage3 from "../../images/GreenEarth.jpg";
 import projectImage4 from "../../images/NintendoShop.png";
 import React, { RefObject, useEffect } from "react";
 import { animateOnView } from "../../shared/animation/onView";
+import { animateOnViewChildren } from "../../shared/animation/onViewChildren";
 
 const Project = (props: PropsI) => {
   const projectList = React.useRef<HTMLUListElement>();
@@ -20,20 +21,30 @@ const Project = (props: PropsI) => {
       return;
     }
 
-    const items = projectList.current.children;
+    let handler = animateOnViewChildren(
+      projectList,
+      classes.moveInRightAn,
+      classes.fadeOutAn
+    );
 
-    for (let i = 0; i < items.length; i++) {
-      const item = { current: items[i] } as RefObject<HTMLElement>;
-      if (i % 2 === 0) {
-        animateOnView(item, classes.fadeInAn, classes.fadeOutAn);
-        continue;
-      }
-      animateOnView(item, classes.moveInRightAn, classes.fadeOutAn);
-    }
+    // const items = projectList.current.children;
+
+    // for (let i = 0; i < items.length; i++) {
+    //   const item = { current: items[i] } as RefObject<HTMLElement>;
+    //   if (i % 2 === 0) {
+    //     animateOnView(item, classes.fadeInAn, classes.fadeOutAn);
+    //     continue;
+    //   }
+    //   animateOnView(item, classes.moveInRightAn, classes.fadeOutAn);
+    // }
 
     // if (item1) {
     //   animateOnView(item1, classes.fadeInAn, classes.fadeOutAn);
     // }
+
+    return () => {
+      document.removeEventListener("scroll", handler);
+    };
   }, []);
 
   return (

@@ -90,6 +90,8 @@ PROJECTS
 
     display: grid;
     grid-auto-rows: 60rem;
+
+    // opacity: 0;
   }
 
   &__item {
@@ -102,8 +104,8 @@ PROJECTS
     display: grid;
 
     position: relative;
-    opacity: 0;
     transition: all 0.2s;
+    opacity: 0;
 
     &:hover {
       // transform: translateY(-2rem);

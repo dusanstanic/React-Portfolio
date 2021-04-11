@@ -58,13 +58,16 @@
 
 @keyframes moveInTop {
   0% {
-    transform: translateY(-8rem);
+    transform: translateY(-15rem);
+  }
+  40% {
+    transform: translateY(10rem);
   }
   60% {
-    transform: translateY(4rem);
+    transform: translateY(-5rem);
   }
   80% {
-    transform: translateY(-2rem);
+    transform: translateY(2rem);
   }
   100% {
     transform: translateY(0);
@@ -80,8 +83,33 @@
   }
 }
 
+@keyframes moveInRotateTop {
+  0% {
+    transform: translateY(-15rem) rotate(0deg);
+  }
+  40% {
+    transform: translateY(5rem) rotate(90deg);
+  }
+  75% {
+    transform: translateY(-10rem) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
+}
+
+@keyframes openIn {
+  0% {
+    transform: rotateY(-90deg);
+  }
+
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
 .fadeInAn {
-  animation: fadein 0.5s ease-in forwards, moveInTop 1s ease-in-out;
+  animation: fadein 0.5s ease-in-out forwards, openIn 2s linear;
 }
 
 .fadeOutAn {
@@ -93,5 +121,5 @@
 }
 
 .wiggleAn {
-  animation: wiggle 1s ease-in forwards;
+  animation: wiggle 2s ease-in-out forwards;
 }

@@ -20,9 +20,11 @@ interface CssExports {
   'moveInLeft': string;
   'moveInRight': string;
   'moveInRightAn': string;
+  'moveInRotateTop': string;
   'moveInTop': string;
   'nav': string;
   'nav__link': string;
+  'openIn': string;
   'u-center-text': string;
   'wiggle': string;
   'wiggleAn': string;

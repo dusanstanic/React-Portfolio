@@ -42,8 +42,7 @@ class Home extends Component<PropsI, StateI> {
     this.overViewViewHandler = animateOnViewChildren(
       this.overview,
       classes.fadeInAn,
-      classes.fadeOutAn,
-      classes.wiggleAn
+      classes.fadeOutAn
     );
     this.projectViewHandler = animateOnView(
       this.project,
