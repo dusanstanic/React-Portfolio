@@ -1,5 +1,5 @@
-import { ArticleDataState } from "../../store/reducers/articleData";
+import { ProjectDataState } from "../../store/reducers/projectData";
 
 export default interface StoreI {
-  articleData: ArticleDataState;
+  projectData: ProjectDataState;
 }
