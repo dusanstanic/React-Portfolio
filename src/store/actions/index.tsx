@@ -1,1 +1,1 @@
-export { fetchArticles, articleDataCheckState } from "./articleData";
+export { fetchProjects, projectDataCheckState } from "./projectData";
