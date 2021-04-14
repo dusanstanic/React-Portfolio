@@ -27,12 +27,11 @@ function animateOnViewChildren(
     let delay = 0;
     for (let i = 0; i < elementChildren.length; i++) {
       yield elementChildren[i];
-      console.dir(elementChildren[i].getBoundingClientRect());
+
       delay += 0.2;
       elementChildren[i].style.animationDelay = delay + "s";
       elementChildren[i].classList.add(animationIn);
       elementChildren[i].classList.remove(animationOut);
-      console.log("After yield");
     }
   }
 
