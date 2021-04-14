@@ -1,50 +1,64 @@
 import React, { FunctionComponent, useEffect } from "react";
 import { connect } from "react-redux";
-import { Route, RouteComponentProps, Switch, withRouter } from "react-router";
+import {
+  Redirect,
+  Route,
+  RouteComponentProps,
+  Switch,
+  withRouter,
+} from "react-router";
 
 import Home from "./container/Home/Home";
-import Project from "./container/Project/Project";
+import Projects from "./container/Projects/Projects";
+import Project from "./components/Project/Project";
 
-import * as newsDataActions from "./store/actions/index";
+import * as projectDataActions from "./store/actions/index";
 
 import Layout from "./hoc/Layout/Layout";
-import Article from "./shared/models/Article";
+import ProjectI from "./shared/models/ProjectI";
 
 import Store from "./shared/models/StoreI";
 
 interface PropsI extends RouteComponentProps {
-  articleDataCheckState: Function;
-  articles: Article[];
+  projectDataCheckState: Function;
+  projects: ProjectI[];
 }
 
-const App: FunctionComponent<PropsI> = ({ history, articleDataCheckState }) => {
+const App: FunctionComponent<PropsI> = ({
+  projects,
+  projectDataCheckState,
+}) => {
   useEffect(() => {
-    // articleDataCheckState();
-    history.push({ pathname: "/home" });
+    projectDataCheckState();
+    // history.push({ pathname: "/home" });
   }, []);
 
-  return (
-    <div>
-      <Layout>
-        <Switch>
-          <Route path="/home" component={Home} />
-          <Route path="/project" component={Project} />
-        </Switch>
-      </Layout>
-    </div>
-  );
+  if (projects) {
+    return (
+      <div>
+        <Layout>
+          <Switch>
+            <Route path="/home" component={Home} />
+            <Route path="/projects/project/:id" component={Project} />
+            <Route path="/projects" component={Projects} />
+          </Switch>
+        </Layout>
+      </div>
+    );
+  } else {
+    return <div>Hello</div>;
+  }
 };
 
 const mapStateToProp = (state: Store) => {
   return {
-    articles: state.articleData.articles,
+    projects: state.projectData.projects,
   };
 };
 
 const mapDispatchToProps = (dispatch: any) => {
   return {
-    articleDataCheckState: () =>
-      dispatch(newsDataActions.articleDataCheckState()),
+    projectDataCheckState: () => dispatch(projectDataActions.fetchProjects()),
   };
 };
 
