@@ -21,7 +21,7 @@ const Navigation = () => {
             </NavLink>
           </li>
           <li className={classes["nav__item"]}>
-            <NavLink to={"/project"} className={classes["nav__link"]}>
+            <NavLink to={"/projects"} className={classes["nav__link"]}>
               Projects
             </NavLink>
           </li>
