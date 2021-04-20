@@ -2,7 +2,7 @@ import classes from "./Home.module.scss";
 import React, { Component, RefObject } from "react";
 import { connect } from "react-redux";
 
-import ArticleM from "../../shared/models/Article";
+import ArticleM from "../../shared/models/ProjectI";
 
 import { animateOnView } from "../../shared/animation/onView";
 import { animateOnViewChildren } from "../../shared/animation/onViewChildren";
@@ -106,7 +106,7 @@ class Home extends Component<PropsI, StateI> {
             <button className={`${classes["btn"]} ${classes["projects__btn"]}`}>
               <NavLink
                 className={classes["projects__link"]}
-                to={{ pathname: "/project" }}
+                to={{ pathname: "/projects" }}
               >
                 View Projects
               </NavLink>
@@ -277,7 +277,7 @@ class Home extends Component<PropsI, StateI> {
 
 const mapStateToProp = (state: Store) => {
   return {
-    articles: state.articleData.articles,
+    articles: state.projectData.projects,
   };
 };
 
