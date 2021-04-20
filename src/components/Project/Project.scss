@@ -1,0 +1,71 @@
+@import "../../sass/main.scss";
+
+.background {
+  opacity: 1;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+
+  position: relative;
+  z-index: 10;
+  padding-top: 10rem;
+  background: linear-gradient(to right, rgba(#0e2058, 0.8), rgba(#1c40b0, 0.8));
+}
+
+.header {
+  grid-column: 2 / -1;
+
+  position: relative;
+
+  &__title {
+    color: $color-primary-light-1;
+    word-wrap: break-word;
+  }
+}
+
+.about {
+  grid-column: 2 / -1;
+  align-self: center;
+
+  display: grid;
+
+  color: $color-primary-light-1;
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+
+  &__title {
+    justify-self: start;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+  }
+
+  &__items {
+    font-size: 1.4rem;
+  }
+
+  &__item {
+    font-size: 1.4rem;
+  }
+}
+
+.detail {
+  grid-column: 2 / -1;
+  align-self: center;
+
+  letter-spacing: 0.2rem;
+
+  color: $color-primary-light-1;
+
+  &__text {
+    font-size: 1.3rem;
+  }
+}
