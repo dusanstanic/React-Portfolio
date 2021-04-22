@@ -51,6 +51,7 @@
     grid-column: center-start / center-end;
 
     display: grid;
+    position: relative;
   }
 
   &__footer {
