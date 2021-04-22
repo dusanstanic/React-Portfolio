@@ -8,7 +8,7 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import { BrowserRouter } from "react-router-dom";
 
-import newsDataReducer from "./store/reducers/articleData";
+import projectDataReducer from "./store/reducers/projectData";
 
 declare global {
   interface Window {
@@ -30,7 +30,7 @@ const logger = (store: any) => {
 };
 
 const rootReducer = combineReducers({
-  articleData: newsDataReducer,
+  projectData: projectDataReducer,
 });
 
 const store = createStore(
